@@ -1,14 +1,22 @@
 import "./App.css";
+import PinterestGallery from "./components/PinterestGallery";
 
 function App() {
   return (
-    <main>
-      <h1>Pinterest POC</h1>
+    <main className="app">
+      <header className="hero">
+        <p className="eyebrow">HOME DESIGN AI</p>
 
-      <a
-        data-pin-do="embedPin"
-        href="https://www.pinterest.com/pin/2744449770239491/"
-      ></a>
+        <h1>Find Your Design Inspiration</h1>
+
+        <p className="hero-description">
+         Choose a space you love<br></br>
+         
+          Select an image to explore its colors and design direction.
+        </p>
+      </header>
+
+      <PinterestGallery />
     </main>
   );
 }
