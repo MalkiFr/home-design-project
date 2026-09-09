@@ -4,14 +4,14 @@ export const products = [
     designId: "https://www.pinterest.com/pin/1076641854686497296/",
     name: "מנורה",
     image: "/products/lamp1.png_.avif",
-    productUrl: "https://he.aliexpress.com/item/1005009531320219.html",
+    productUrl: "https://he.aliexpress.com/item/1005008685924915.html",
   },
   {
     id: "lamp-2",
     designId: "https://www.pinterest.com/pin/1076641854686497296/",
     name: "מנורה",
     image: "/products/lamp2.jpg_.avif",
-    productUrl: "https://he.aliexpress.com/item/1005008685924915.html",
+    productUrl: "https://he.aliexpress.com/item/1005009531320219.html",
   },
   {
     id: "wall-stickers-1",

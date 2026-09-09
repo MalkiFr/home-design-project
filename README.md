@@ -1,32 +1,106 @@
-# React + TypeScript + Vite
+# Pinterest Design Inspiration POC
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React proof of concept for exploring interior design inspiration through embedded Pinterest pins. Users can select a design, view its curated color palette, and discover recommended products associated with the selected inspiration.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Embedded Pinterest pins displayed in a responsive gallery
+- Design selection with a clear active state
+- Curated color palettes for each supported pin
+- Product recommendations for selected designs
+- Responsive layout for desktop and mobile screens
+- Privacy policy page available in `public/privacy-policy.html`
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- TypeScript
+- Vite
+- CSS
+- Pinterest Embed SDK
+- npm
 
-## Expanding the Oxlint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+Install the following before running the project:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Node.js 18 or later
+- npm
+
+## Installation
+
+1. Clone or download the repository.
+2. Open a terminal in the project directory.
+3. Install the dependencies:
+
+```bash
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Development
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal. Vite typically uses `http://localhost:5173`.
+
+## Production Build
+
+Create a type-checked production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Run the linter:
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```text
+src/
+  assets/                  Static application assets
+  components/
+    PinterestGallery.tsx   Pinterest gallery and selection experience
+  data/
+    pinterestPalettes.ts   Color palettes mapped to Pinterest pins
+    pinterestPins.ts       Pinterest pin URLs
+    products.ts            Product recommendation data
+  App.css                  Application styles
+  App.tsx                  Root application component
+  index.css                Global styles
+  main.tsx                 Application entry point
+
+public/
+  privacy-policy.html      Privacy policy page
+```
+
+## Data and Integrations
+
+Pinterest content is loaded through the Pinterest Embed SDK from `pinit.js`. The pin URLs, color palettes, and product recommendations are currently maintained as local data files under `src/data/`.
+
+The Pinterest SDK requires an active internet connection for embedded content to render correctly. Changes to the embed markup or dynamically rendered pins may require the SDK to rebuild the embeds after the component updates.
+
+## Future Improvements
+
+- Add more Pinterest pins, palettes, and product recommendations
+- Add search, filtering, and collections
+- Move design and product data to an API or content management system
+- Add automated tests for selection and palette rendering
+- Improve accessibility and loading states for embedded content
+
+## License
+
+No license has been specified for this project.
